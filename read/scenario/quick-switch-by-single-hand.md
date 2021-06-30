@@ -15,7 +15,7 @@ parent: 使用情境
 | 按鍵 | 功能導向 |
 | --- | --- |
 | [Win](#win) | Window |
-| [Alt](#alt) | Tag |
+| [Alt](#alt) | Workspace |
 
 
 | 按鍵 | 方向 |
@@ -32,6 +32,7 @@ parent: 使用情境
 | --- | --- |
 | `Win + a` | 聚焦切換到上一個 Window |
 | `Win + s` | 聚焦切換到下一個 Window |
+| `Win + z` | 聚焦切換到主要 Window |
 
 ### 交換 Window
 
@@ -45,13 +46,13 @@ parent: 使用情境
 
 ## Alt
 
-### 切換 Tag
+### 切換 Workspace
 
 | 按鍵組合 | 功能 |
 | --- | --- |
-| `Alt + a` | 切換到上一個 Tag |
-| `Alt + s` | 切換到下一個 Tag |
-| `Alt + z` | 切換到最近使用過的 Tag |
+| `Alt + a` | 切換到上一個 Workspace |
+| `Alt + s` | 切換到下一個 Workspace |
+| `Alt + z` | 切換到最近使用過的 Workspace |
 
 ### 切換 Layout
 

@@ -13,7 +13,7 @@ parent: 使用情境
 
 | 按鍵 | 功能導向 |
 | --- | --- |
-| [Alt](#alt) | Tag |
+| [Alt](#alt) | Workspace |
 | [Win](#win) | Window |
 
 ## tag 數字 對照 名稱
@@ -29,28 +29,28 @@ parent: 使用情境
 
 ## Alt
 
-### 切換 Tag
+### 切換 Workspace
 
 | 按鍵組合 | 功能 |
 | --- | --- |
-| `Alt + 1` | 切換到 Tag 1 (Term) |
-| `Alt + 2` | 切換到 Tag 2 (Edit) |
-| `Alt + 3` | 切換到 Tag 3 (Web) |
-| `Alt + 4` | 切換到 Tag 4 (File) |
-| `Alt + 5` | 切換到 Tag 5 (Misc) |
+| `Alt + 1` | 切換到 Workspace 1 (Term) |
+| `Alt + 2` | 切換到 Workspace 2 (Edit) |
+| `Alt + 3` | 切換到 Workspace 3 (Web) |
+| `Alt + 4` | 切換到 Workspace 4 (File) |
+| `Alt + 5` | 切換到 Workspace 5 (Misc) |
 
 
 ## Win
 
-### 將 Window 移動到 指定 Tag
+### 將 Window 移動到 指定 Workspace
 
 | 按鍵組合 | 功能 |
 | --- | --- |
-| `Win + 1` | 將目前聚焦的 Window 移動到 Tag 1 (Term) |
-| `Win + 2` | 將目前聚焦的 Window 移動到 Tag 2 (Edit) |
-| `Win + 3` | 將目前聚焦的 Window 移動到 Tag 3 (Web) |
-| `Win + 4` | 將目前聚焦的 Window 移動到 Tag 4 (File) |
-| `Win + 5` | 將目前聚焦的 Window 移動到 Tag 5 (Misc) |
+| `Win + 1` | 將目前聚焦的 Window 移動到 Workspace 1 (Term) |
+| `Win + 2` | 將目前聚焦的 Window 移動到 Workspace 2 (Edit) |
+| `Win + 3` | 將目前聚焦的 Window 移動到 Workspace 3 (Web) |
+| `Win + 4` | 將目前聚焦的 Window 移動到 Workspace 4 (File) |
+| `Win + 5` | 將目前聚焦的 Window 移動到 Workspace 5 (Misc) |
 
 
 

@@ -14,7 +14,7 @@ parent: 使用情境
 | 按鍵 | 功能導向 |
 | --- | --- |
 | [Win](#win) | Window |
-| [Alt](#alt) | Tag 或是 Layout |
+| [Alt](#alt) | Workspace 或是 Layout |
 
 
 ## Win
@@ -35,12 +35,12 @@ parent: 使用情境
 
 ## Alt
 
-### 切換 Tag
+### 切換 Workspace
 
 | 按鍵組合 | 功能 |
 | --- | --- |
-| `Alt + Left` | 切換到上一個 Tag |
-| `Alt + Right` | 切換到下一個 Tag |
+| `Alt + Left` | 切換到上一個 Workspace |
+| `Alt + Right` | 切換到下一個 Workspace |
 
 ### 切換 Layout
 
@@ -49,12 +49,19 @@ parent: 使用情境
 | `Alt + Up` | 切換到上一個 Layout |
 | `Alt + Down` | 切換到下一個 Layout |
 
-### 更改 Layout 大小
+### 更改 Layout / Master 大小
 
 | 按鍵組合 | 功能 |
 | --- | --- |
-| `Alt + Ctrl + Up` | 對「主要 Layout 視窗」增加寬度 |
-| `Alt + Ctrl + Down` | 對「主要 Layout 視窗」減少寬度 |
+| `Alt + Ctrl + Left` | 對「主要 Layout 區域」減少寬度 |
+| `Alt + Ctrl + Right` | 對「主要 Layout 區域」增加寬度 |
+
+### 更改 Layout / Master 數目
+
+| 按鍵組合 | 功能 |
+| --- | --- |
+| `Alt + Ctrl + Up` | 對「主要 Layout 區域」減少數目 |
+| `Alt + Ctrl + Down` | 對「主要 Layout 區域」增加數目 |
 
 
 ## 對照

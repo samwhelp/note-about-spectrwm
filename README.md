@@ -56,7 +56,7 @@
 | [數字鍵版](https://samwhelp.github.io/note-about-spectrwm/read/scenario/quick-switch-by-number-key) |
 | [單手版(左手)](https://samwhelp.github.io/note-about-spectrwm/read/scenario/quick-switch-by-single-hand) |
 | [其他視窗操作](https://samwhelp.github.io/note-about-spectrwm/read/scenario/window-control) |
-
+| [其他Layout操作](https://samwhelp.github.io/note-about-spectrwm/read/scenario/layout-control) |
 
 | 系統操作 |
 | --- |
