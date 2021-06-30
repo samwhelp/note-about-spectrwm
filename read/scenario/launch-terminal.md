@@ -15,4 +15,3 @@ parent: 使用情境
 | `Alt + Ctrl + a` | 開啟 Terminal (xfce4-terminal) |
 | `Alt + Shift + t` | 開啟 Terminal (xterm) |
 | `Alt + Ctrl + t` | 開啟 Terminal (urxvt) |
-| `Alt + Shift + o` | Toggle Scratchpad (xfce4-terminal) |
