@@ -15,5 +15,5 @@ parent: 專案
 
 ## Tool
 
-* [spectrwmrc-theme-get](spectrwmrc-theme-get)
-* [spectrwmrc-theme-ctrl](spectrwmrc-theme-ctrl)
+* [spectrwmrc-get](spectrwmrc-get)
+* [spectrwmrc-ctrl](spectrwmrc-ctrl)
