@@ -148,7 +148,7 @@ None.
 
 | Key | Description |
 | --- | --- |
-| `Win + v` | Toggle Window Floating To Tile |
+| `Win + n` | Toggle Window Floating To Tile |
 
 ### Window Maximize
 
@@ -196,8 +196,8 @@ None.
 
 | Key | Description |
 | --- | --- |
-| `Win + Enter` | Swap Focused Window To Top (Stack Order) |
-| `Win + b` | Swap Focused Window To Top (Stack Order) |
+| `Win + Enter` | Swap Focused Window To Main Window |
+| `Win + M` | Swap Focused Window To Main Window |
 
 | Key | Description |
 | --- | --- |
