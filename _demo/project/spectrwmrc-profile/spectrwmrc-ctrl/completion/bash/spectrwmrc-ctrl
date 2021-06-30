@@ -1,0 +1,18 @@
+
+## /usr/local/share/bash-completion/completions/spectrwmrc-ctrl
+## $ sudo install -Dm644 ./spectrwmrc-ctrl /usr/local/share/bash-completion/completions/spectrwmrc-ctrl
+
+_spectrwmrc_ctrl () {
+
+	local cur prev words cword
+	_init_completion || return
+
+	if [ "$cword" = "1" ]; then
+		local action_list=$(DEBUG_SPECTRWMRC_CTRL=false spectrwmrc-ctrl self_actions)
+		COMPREPLY=( $( compgen -W "$action_list" -- "$cur" ) )
+	fi
+
+	return 0
+}
+
+complete -F _spectrwmrc_ctrl spectrwmrc-ctrl
