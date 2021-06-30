@@ -27,14 +27,14 @@ parent: 使用情境
 
 | 按鍵組合 | 功能 |
 | --- | --- |
-| `Win + b` | 將目前聚焦的視窗，放到主要Layout位置 |
+| `Win + m` | 將目前聚焦的視窗，放到主要Layout位置 |
 
 
 ## 從Floating切換到Tile
 
 | 按鍵組合 | 功能 |
 | --- | --- |
-| `Win + v` | 將目前聚焦的視窗，從Floating切換到Tile |
+| `Win + n` | 將目前聚焦的視窗，從Floating切換到Tile |
 
 
 ### 最大化
