@@ -26,6 +26,7 @@ has_children: true
 | [數字鍵版](scenario/quick-switch-by-number-key) |
 | [單手版(左手)](scenario/quick-switch-by-single-hand) |
 | [其他視窗操作](scenario/window-control) |
+| [浮動視窗操作](scenario/window-float-control) |
 | [其他Layout操作](scenario/layout-control) |
 
 
