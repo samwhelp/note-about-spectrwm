@@ -10,8 +10,9 @@ parent: 設定
 
 ## 設定檔
 
-* [~/.config/spectrwm/config.toml](https://github.com/samwhelp/note-about-spectrwm/blob/gh-pages/_demo/config/main/config/spectrwm/config.toml)
-* [英文版說明](https://github.com/samwhelp/note-about-spectrwm/blob/gh-pages/_demo/config/main/spec-keybind.md)
+* [~/.config/spectrwm/spectrwm.conf](https://github.com/samwhelp/note-about-spectrwm/blob/gh-pages/_demo/config/spectrwm-config/main/config/spectrwm/spectrwm.conf)
+* [~/.config/spectrwm/spectrwm.keybind.conf](https://github.com/samwhelp/note-about-spectrwm/blob/gh-pages/_demo/config/spectrwm-config/main/config/spectrwm/spectrwm.keybind.conf)
+* [英文版說明](https://github.com/samwhelp/note-about-spectrwm/blob/gh-pages/_demo/config/spectrwm-config/main/spec-keybind.md)
 
 
 ## 使用情境

@@ -38,7 +38,7 @@ curl -fLo ~/.config/spectrwm/spectrwm.conf --create-dirs \
 執行下面指令，安裝我的設定檔到「~/.config/spectrwm/spectrwm.keybind.conf」。
 
 ``` sh
-curl -fLo ~/.config/spectrwm/cspectrwm.keybind.conf --create-dirs \
+curl -fLo ~/.config/spectrwm/spectrwm.keybind.conf --create-dirs \
 	'https://raw.githubusercontent.com/samwhelp/note-about-spectrwm/gh-pages/_demo/config/spectrwm-config/main/config/spectrwm/spectrwm.keybind.conf'
 ```
 
