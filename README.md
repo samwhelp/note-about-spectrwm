@@ -52,7 +52,7 @@
 | 快速切換 |
 | --- |
 | [方向鍵版](https://samwhelp.github.io/note-about-spectrwm/read/scenario/quick-switch-by-arrow-key) |
-| [kjhl版](https://samwhelp.github.io/note-about-spectrwm/read/scenario/quick-switch-by-arrow-key) |
+| [kjhl版](https://samwhelp.github.io/note-about-spectrwm/read/scenario/quick-switch-by-kjhl-key) |
 | [數字鍵版](https://samwhelp.github.io/note-about-spectrwm/read/scenario/quick-switch-by-number-key) |
 | [單手版(左手)](https://samwhelp.github.io/note-about-spectrwm/read/scenario/quick-switch-by-single-hand) |
 | [其他視窗操作](https://samwhelp.github.io/note-about-spectrwm/read/scenario/window-control) |
