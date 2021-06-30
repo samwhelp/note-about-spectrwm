@@ -9,7 +9,7 @@ parent: 使用情境
 # 其他Layout操作
 
 
-## 將「Layout / Master」和「Layout / Stack」交換;
+## 將「Layout / Master」和「Layout / Stack」交換
 
 | 按鍵組合 | 功能 |
 | --- | --- |

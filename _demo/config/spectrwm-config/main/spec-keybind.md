@@ -6,8 +6,8 @@
 
 * [System](#system)
 * [Launch App](#launch-app)
+* [Region](#region)
 * [Workspace](#workspace)
-* [Tag](#tag)
 * [Window](#window)
 * [Layout](#layout)
 * [Volume](#volume)
@@ -36,7 +36,7 @@
 
 | Key | Description |
 | --- | --- |
-| `Alt` | For Tag (Workspace) (Desktop) |
+| `Alt` | For Workspace (Region) (Desktop) |
 | `Win` | For Window (Client) |
 | `Shift` | For Window Move or Swap |
 | `Ctrl` | For Window Resize |
@@ -62,7 +62,7 @@
 | `Alt + Ctrl + a` | Launch Terminal (xfce4-terminal) |
 | `Alt + Shift + t` | Launch Terminal (xterm) |
 | `Alt + Ctrl + t` | Launch Terminal (urxvt) |
-| `Alt + Shift + o` | Toggle Scratchpad (xfce4-terminal) |
+
 
 ### Launch Rofi
 
@@ -88,17 +88,13 @@
 | `Alt + Shift + i` | Launch Dmenu (dmenu_run) |
 
 
+## Region
+
+None.
+
 ## Workspace
 
-| Key | Description |
-| --- | --- |
-| `Alt + Ctrl + Left` | Focus Previous Workspace |
-| `Alt + Ctrl + Right` | Focus Next Workspace |
-
-
-## Tag
-
-| Tag | Title |
+| Workspace | Title |
 | --- | --- |
 | 1 | Term |
 | 2 | Edit |
@@ -109,33 +105,28 @@
 
 | Key | Description |
 | --- | --- |
-| `Alt + [1-5]` | Switch to Specific Tag |
-| `Win + [1-5]` | Move Focused Window to Specific Tag |
+| `Alt + [1-5]` | Switch to Specific Workspace |
+| `Win + [1-5]` | Move Focused Window to Specific Workspace |
 
 
 | Key | Description |
 | --- | --- |
-| `Alt + z` | Switch to Perior Tag |
+| `Alt + z` | Switch to Perior Workspace |
 
 | Key | Description |
 | --- | --- |
-| `Alt + a` | Switch to Previous Tag |
-| `Alt + s` | Switch to Next Tag |
+| `Alt + a` | Switch to Previous Workspace |
+| `Alt + s` | Switch to Next Workspace |
 
 | Key | Description |
 | --- | --- |
-| `Alt + h` | Switch to Previous Tag |
-| `Alt + l` | Switch to Next Tag |
+| `Alt + h` | Switch to Previous Workspace |
+| `Alt + l` | Switch to Next Workspace |
 
 | Key | Description |
 | --- | --- |
-| `Alt + Left` | Switch to Previous Tag |
-| `Alt + Right` | Switch to Next Tag |
-
-| Key | Description |
-| --- | --- |
-| `Alt + [` | Switch to Previous Tag |
-| `Alt + ]` | Switch to Next Tag |
+| `Alt + Left` | Switch to Previous Workspace |
+| `Alt + Right` | Switch to Next Workspace |
 
 
 ## Window
@@ -145,6 +136,7 @@
 | Key | Description |
 | --- | --- |
 | `Win + q` | Window Close |
+| `Win + Shift + q` | Window Kill |
 
 ### Window FullScreen
 
@@ -152,7 +144,37 @@
 | --- | --- |
 | `Win + f` | Window FullScreen |
 
+### Window Floating To Tile
+
+| Key | Description |
+| --- | --- |
+| `Win + v` | Toggle Window Floating To Tile |
+
+### Window Maximize
+
+| Key | Description |
+| --- | --- |
+| `Win + w` | Window Maximize |
+
+### Window Minimize
+
+| Key | Description |
+| --- | --- |
+| `Win + x` | Window Iconify |
+| `Win + Shift + x` | Window Uniconify |
+
+### Window Raise
+
+| Key | Description |
+| --- | --- |
+| `Win + g` | Window Raise |
+
+
 ### Window Focus
+
+| Key | Description |
+| --- | --- |
+| `Win + z` | Focus to Main Window |
 
 | Key | Description |
 | --- | --- |
@@ -194,13 +216,38 @@
 | `Win + Up` | Swap Focused Window To Up (Stack Order) |
 | `Win + Down` | Swap Focused Window To Down (Stack Order) |
 
-### Window Floating To Tile
+### Window Float Move
 
 | Key | Description |
 | --- | --- |
-| `Win + v` | Window Floating To Tile |
-| `Win + Shift + t` | Window Floating To Tile |
+| `Win + Shift + k` | Window Float Move Up |
+| `Win + Shift + j` | Window Float Move Down |
+| `Win + Shift + h` | Window Float Move Left |
+| `Win + Shift + l` | Window Float Move Right |
 
+| Key | Description |
+| --- | --- |
+| `Win + Shift + Up` | Window Float Move Up |
+| `Win + Shift + Down` | Window Float Move Down |
+| `Win + Shift + Left` | Window Float Move Left |
+| `Win + Shift + Right` | Window Float Move Right |
+
+
+### Window Float Resize
+
+| Key | Description |
+| --- | --- |
+| `Win + Ctrl + k` | Window Float Resize |
+| `Win + Ctrl + j` | Window Float Resize |
+| `Win + Ctrl + h` | Window Float Resize |
+| `Win + Ctrl + l` | Window Float Resize |
+
+| Key | Description |
+| --- | --- |
+| `Win + Ctrl + Up` | Window Float Resize |
+| `Win + Ctrl + Down` | Window Float Resize |
+| `Win + Ctrl + Left` | Window Float Resize |
+| `Win + Ctrl + Right` | Window Float Resize |
 
 ## Layout
 
