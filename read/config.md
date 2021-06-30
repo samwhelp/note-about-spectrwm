@@ -23,6 +23,7 @@ has_children: true
 ## 設定檔文件說明
 
 * spectrwm / Wiki / [Tutorial](https://github.com/conformal/spectrwm/wiki/Tutorial)
+* spectrwm / [Documentation](https://htmlpreview.github.io/?https://github.com/conformal/spectrwm/blob/master/spectrwm.html)
 
 
 ## 如何安裝
