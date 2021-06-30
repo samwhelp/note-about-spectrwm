@@ -1,0 +1,18 @@
+
+## /usr/local/share/bash-completion/completions/spectrwmrc-get
+## $ sudo install -Dm644 ./spectrwmrc-get /usr/local/share/bash-completion/completions/spectrwmrc-get
+
+_spectrwmrc_get () {
+
+	local cur prev words cword
+	_init_completion || return
+
+	if [ "$cword" = "1" ]; then
+		local action_list=$(DEBUG_SPECTRWMRC_GET=false spectrwmrc-get self_actions)
+		COMPREPLY=( $( compgen -W "$action_list" -- "$cur" ) )
+	fi
+
+	return 0
+}
+
+complete -F _spectrwmrc_get spectrwmrc-get
