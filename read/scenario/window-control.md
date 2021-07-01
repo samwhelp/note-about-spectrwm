@@ -23,29 +23,29 @@ parent: 使用情境
 | `Win + f` | 將目前聚焦的視窗，切換成全螢幕 |
 
 
-## 放到主要位置
+## 交換到主要視窗位置
 
 | 按鍵組合 | 功能 |
 | --- | --- |
-| `Win + m` | 將目前聚焦的視窗，放到主要Layout位置 |
+| `Win + m` | 將目前聚焦的視窗，交換到主要視窗位置 |
 
 
-## 從Floating切換到Tile
+## 在浮動模式和平鋪模式之間切換
 
 | 按鍵組合 | 功能 |
 | --- | --- |
-| `Win + n` | 將目前聚焦的視窗，從Floating切換到Tile |
+| `Win + n` | 將目前聚焦的視窗，在浮動模式和平鋪模式之間切換 |
 
 
 ### 最大化
 
 | Key | Description |
 | --- | --- |
-| `Win + w` | Window Maximize |
+| `Win + w` | 將目前聚焦的視窗最大化 |
 
 ### 最小化
 
 | Key | Description |
 | --- | --- |
-| `Win + x` | Window Iconify |
-| `Win + Shift + x` | Window Uniconify |
+| `Win + x` | 將目前聚焦的視窗最小化 |
+| `Win + Shift + x` | 將目前聚焦的視窗從最小化恢復顯示 |
