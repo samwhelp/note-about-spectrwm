@@ -64,19 +64,19 @@ parent: 使用情境
 
 
 
-### 更改 Layout / Master 大小
+### 更改 「Layout / Master Area」 大小
 
 | 按鍵組合 | 功能 |
 | --- | --- |
-| `Alt + Ctrl + h` | 對「主要 Layout 區域」減少寬度 |
-| `Alt + Ctrl + l` | 對「主要 Layout 區域」增加寬度 |
+| `Alt + Ctrl + h` | 縮小「主要 Layout 區域」 |
+| `Alt + Ctrl + l` | 擴大「主要 Layout 區域」 |
 
-### 更改 Layout / Master 數目
+### 更改 「Layout / Master Area」 的 Window 數目
 
 | 按鍵組合 | 功能 |
 | --- | --- |
-| `Alt + Ctrl + k` | 對「主要 Layout 區域」減少數目 |
-| `Alt + Ctrl + j` | 對「主要 Layout 區域」增加數目 |
+| `Alt + Ctrl + k` | 減少「主要 Layout 區域」的 Window 數目 |
+| `Alt + Ctrl + j` | 增加「主要 Layout 區域」的 Window 數目 |
 
 
 ## 對照

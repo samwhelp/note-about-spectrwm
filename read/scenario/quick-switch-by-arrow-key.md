@@ -33,6 +33,7 @@ parent: 使用情境
 | `Win + Up` | 將目前聚焦的 Window，交換到上一個 Window 的位置 |
 | `Win + Down` | 將目前聚焦的 Window，交換到下一個 Window 的位置 |
 
+
 ## Alt
 
 ### 切換 Workspace
@@ -49,19 +50,19 @@ parent: 使用情境
 | `Alt + Up` | 切換到上一個 Layout |
 | `Alt + Down` | 切換到下一個 Layout |
 
-### 更改 Layout / Master 大小
+### 更改 「Layout / Master Area」 大小
 
 | 按鍵組合 | 功能 |
 | --- | --- |
-| `Alt + Ctrl + Left` | 對「主要 Layout 區域」減少寬度 |
-| `Alt + Ctrl + Right` | 對「主要 Layout 區域」增加寬度 |
+| `Alt + Ctrl + Left` | 縮小「主要 Layout 區域」 |
+| `Alt + Ctrl + Right` | 擴大「主要 Layout 區域」 |
 
-### 更改 Layout / Master 數目
+### 更改 「Layout / Master Area」 的 Window 數目
 
 | 按鍵組合 | 功能 |
 | --- | --- |
-| `Alt + Ctrl + Up` | 對「主要 Layout 區域」減少數目 |
-| `Alt + Ctrl + Down` | 對「主要 Layout 區域」增加數目 |
+| `Alt + Ctrl + Up` | 減少「主要 Layout 區域」的 Window 數目 |
+| `Alt + Ctrl + Down` | 增加「主要 Layout 區域」的 Window 數目 |
 
 
 ## 對照

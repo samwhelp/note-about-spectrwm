@@ -50,3 +50,14 @@ parent: 使用情境
 | --- | --- |
 | `Win + x` | 將目前聚焦的視窗最小化 |
 | `Win + Shift + x` | 將目前聚焦的視窗從最小化恢復顯示 |
+
+
+
+## 對照
+
+| 對照 |
+| --- |
+| [方向鍵版](quick-switch-by-arrow-key) |
+| [kjhl版](quick-switch-by-kjhl-key) |
+| [(數字鍵版](quick-switch-by-number-key) |
+| [(單手版](quick-switch-by-single-hand) |
