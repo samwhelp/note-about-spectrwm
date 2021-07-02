@@ -22,8 +22,6 @@ install:
 	sudo install -Dm755 ./spectrwm-session.sh /usr/local/bin/spectrwm-session.sh
 	mkdir -p ~/.config/spectrwm/bin
 	install -Dm755 ./spectrwm-session-autostart.sh ~/.config/spectrwm/bin/spectrwm-session-autostart.sh
-	install -Dm755 ./spectrwm-session-autostart.sh ~/.config/spectrwm/bin/spectrwm-trayer-start.sh
-	install -Dm755 ./spectrwm-session-autostart.sh ~/.config/spectrwm/bin/spectrwm-trayer-stop.sh
 .PHONY: install
 
 
@@ -31,6 +29,4 @@ remove:
 	sudo rm -f /usr/share/xsessions/spectrwm-session.desktop
 	sudo rm -f /usr/local/bin/spectrwm-session.sh
 	rm -f ~/.config/spectrwm/bin/spectrwm-session-autostart.sh
-	rm -f ~/.config/spectrwm/bin/spectrwm-trayer-start.sh
-	rm -f ~/.config/spectrwm/bin/spectrwm-trayer-stop.sh
 .PHONY: remove

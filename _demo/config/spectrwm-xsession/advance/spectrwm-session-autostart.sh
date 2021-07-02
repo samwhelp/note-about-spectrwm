@@ -356,7 +356,24 @@ app_stalonetray_start () {
 
 app_trayer_start () {
 
-	spectrwm-trayer-start.sh &
+	pkill trayer
+
+	is_command_exist 'trayer' && \
+
+	trayer						\
+		--monitor primary		\
+		--edge top				\
+		--widthtype pixel		\
+		--width 200				\
+		--heighttype pixel		\
+		--height 20				\
+		--align right			\
+		--margin 40				\
+		--transparent true		\
+		--alpha 0				\
+		--tint 0x333333			\
+		--iconspacing 4			\
+		--distance 3 &
 
 }
 
@@ -410,7 +427,7 @@ __main__ () {
 
 ## Tray
 	#app_stalonetray_start
-	app_trayer_start
+	#app_trayer_start
 
 ## Terminal
 	#app_sakura_start
