@@ -15,7 +15,7 @@ has_children: true
 
 | 設定檔 |
 | [我的設定](https://github.com/samwhelp/note-about-spectrwm/blob/gh-pages/_demo/config/spectrwm-config/main/config/spectrwm/spectrwm.conf)
-| [系統預設](https://github.com/samwhelp/note-about-spectrwm/blob/gh-pages/_demo/config/spectrwm-config/default/config/spectrwm/spectrwm.conf) |
+| [系統預設](https://github.com/conformal/spectrwm/blob/master/spectrwm.conf) |
 
 ## 設定檔文件說明
 
