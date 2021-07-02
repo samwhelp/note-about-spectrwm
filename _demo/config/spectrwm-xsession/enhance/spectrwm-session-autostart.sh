@@ -181,16 +181,40 @@ app_mate_volume_control_status_icon_start () {
 
 app_feh_start () {
 
-	#THE_WALLPAPER_FILE_PATH="/usr/share/backgrounds/Manhattan_Sunset_by_Giacomo_Ferroni.jpg"
-	#THE_WALLPAPER_FILE_PATH="/usr/share/backgrounds/Spices_in_Athens_by_Makis_Chourdakis.jpg"
-	#THE_WALLPAPER_FILE_PATH="/usr/share/backgrounds/xfce/palm-wave.jpg"
-	THE_WALLPAPER_FILE_PATH="$HOME/Pictures/Wallpaper/bg.jpg"
+	sys_feh_wallpaper_main
+
+}
+
+
+sys_feh_wallpaper_default () {
+
+	local wallpaper_file_path
+
+	#wallpaper_file_path="/usr/share/backgrounds/Manhattan_Sunset_by_Giacomo_Ferroni.jpg"
+	#wallpaper_file_path="/usr/share/backgrounds/Spices_in_Athens_by_Makis_Chourdakis.jpg"
+	#wallpaper_file_path="/usr/share/backgrounds/xfce/palm-wave.jpg"
+	wallpaper_file_path="$HOME/Pictures/Wallpaper/bg.jpg"
 
 	pkill feh
 
-	is_command_exist 'feh' && feh --bg-scale "$THE_WALLPAPER_FILE_PATH" &
+	is_command_exist 'feh' && feh --bg-scale "$wallpaper_file_path" &
 
 }
+
+sys_feh_wallpaper_main () {
+
+	local load_last="$HOME/.fehbg"
+
+	if [ -x "$load_last" ]; then
+		##echo 1
+		$load_last
+		return
+	fi
+
+	##echo 2
+	sys_feh_wallpaper_default
+}
+
 
 ##
 ### Tail: Desktop / Wallpaper / feh
