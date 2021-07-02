@@ -16,7 +16,9 @@
 ### Head: Path
 ##
 
-PATH="$HOME/.config/spectrwm/bin:$PATH"
+PATH="$HOME/.config/spectrwm-session/bin:$PATH"
+##export PATH="$HOME/.config/spectrwm-session/bin:$PATH"
+#PATH="$HOME/.config/spectrwm/bin:$PATH"
 ##export PATH="$HOME/.config/spectrwm/bin:$PATH"
 
 ##

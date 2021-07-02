@@ -356,7 +356,7 @@ app_stalonetray_start () {
 
 app_trayer_start () {
 
-	spectrwm-trayer-start.sh &
+	is_command_exist 'spectrwm-trayer-start.sh' && spectrwm-trayer-start.sh &
 
 }
 
