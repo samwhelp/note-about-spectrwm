@@ -10,9 +10,6 @@ has_children: true
 ## 設定檔路徑
 
 * ~/.config/spectrwm/spectrwm.conf
-* ~/.config/spectrwm/spectrwm.keybind.conf
-
-
 
 ## 設定檔範例
 
