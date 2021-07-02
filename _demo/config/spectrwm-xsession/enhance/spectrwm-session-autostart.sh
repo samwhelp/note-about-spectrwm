@@ -13,6 +13,63 @@
 
 
 ################################################################################
+### head: Util
+##
+
+# is_command_exist () {
+#
+# 	if command -v "$1" > /dev/null; then
+# 		return 0
+# 	else
+# 		return 1
+# 	fi
+#
+# }
+
+is_command_exist () {
+
+	if [ -x "$(command -v $1)" ]; then
+		return 0
+	else
+		return 1
+	fi
+
+}
+
+is_command_not_exist () {
+
+	if [ -x "$(command -v $1)" ]; then
+		return 1
+	else
+		return 0
+	fi
+
+}
+
+util_app_start () {
+
+	local cmd="$1"
+
+	# if ! is_command_exist "$cmd"; then
+	# 	#echo "## Command Not Exist: $cmd"
+	# 	return
+	# fi
+
+	if is_command_not_exist "$cmd"; then
+		#echo "## Command Not Exist: $cmd"
+		return
+	fi
+
+	"$cmd" &
+
+}
+
+##
+### tail: Util
+################################################################################
+
+
+################################################################################
 ### Head: Xresources
 ##
 
@@ -41,7 +98,11 @@
 
 
 app_nm_applet_start () {
-	nm-applet &
+
+	pkill nm-applet
+
+	is_command_exist 'nm-applet' && nm-applet &
+
 }
 
 
@@ -60,7 +121,11 @@ app_nm_applet_start () {
 ## Note: use /etc/xdg/autostart/blueman.desktop
 
 app_blueman_applet_start () {
-	blueman-applet &
+
+	pkill blueman-applet
+
+	is_command_exist 'blueman-applet' && blueman-applet &
+
 }
 
 ##
@@ -75,7 +140,11 @@ app_blueman_applet_start () {
 ## volumeicon (Package: volumeicon-alsa)
 
 app_volumeicon_start () {
-	volumeicon &
+
+	pkill volumeicon
+
+	is_command_exist 'volumeicon' && volumeicon &
+
 }
 
 ##
@@ -91,7 +160,10 @@ app_volumeicon_start () {
 
 app_mate_volume_control_status_icon_start () {
 
-	mate-volume-control-status-icon &
+	pkill mate-volume-control-status-icon
+
+	is_command_exist 'mate-volume-control-status-icon' && mate-volume-control-status-icon &
+
 }
 
 ##
@@ -113,7 +185,10 @@ app_feh_start () {
 	#THE_WALLPAPER_FILE_PATH="/usr/share/backgrounds/Spices_in_Athens_by_Makis_Chourdakis.jpg"
 	#THE_WALLPAPER_FILE_PATH="/usr/share/backgrounds/xfce/palm-wave.jpg"
 	THE_WALLPAPER_FILE_PATH="$HOME/Pictures/Wallpaper/bg.jpg"
-	feh --bg-scale "$THE_WALLPAPER_FILE_PATH" &
+
+	pkill feh
+
+	is_command_exist 'feh' && feh --bg-scale "$THE_WALLPAPER_FILE_PATH" &
 
 }
 
@@ -133,7 +208,11 @@ app_compton_start () {
 
 	#compton --config ~/.config/spectrwm/etc/compton/compton.conf &
 
-	compton &
+	pkill compton
+
+	is_command_exist 'compton' && compton &
+
+
 }
 
 ##
@@ -146,7 +225,12 @@ app_compton_start () {
 ##
 
 app_picom_start () {
-	picom &
+
+
+	pkill picom
+
+	is_command_exist 'picom' && picom &
+
 }
 
 ##
@@ -212,7 +296,9 @@ app_picom_start () {
 
 app_fcitx_start () {
 
-	fcitx &
+	pkill fcitx
+
+	is_command_exist 'fcitx' && fcitx &
 
 }
 
@@ -229,7 +315,7 @@ app_fcitx_start () {
 
 app_stalonetray_start () {
 
-	stalonetray &
+	is_command_exist 'stalonetray' && stalonetray &
 
 }
 
@@ -245,6 +331,10 @@ app_stalonetray_start () {
 ## * https://github.com/sargon/trayer-srg
 
 app_trayer_start () {
+
+	pkill trayer
+
+	is_command_exist 'trayer' && \
 
 	trayer						\
 		--monitor primary		\
@@ -273,7 +363,9 @@ app_trayer_start () {
 ##
 
 app_sakura_start () {
-	sakura -m &
+
+	is_command_exist 'sakura' && sakura -m &
+
 }
 
 ##
@@ -284,6 +376,10 @@ app_sakura_start () {
 ################################################################################
 ### Head: Main
 ##
+
+__test__ () {
+	app_sakura_start
+}
 
 __main__ () {
 
@@ -305,9 +401,9 @@ __main__ () {
 ## Im
 	app_fcitx_start
 
-## Trayer
+## Tray
 	#app_stalonetray_start
-	app_trayer_start
+	#app_trayer_start
 
 ## Terminal
 	#app_sakura_start
@@ -316,6 +412,7 @@ __main__ () {
 }
 
 __main__
+##__test__
 
 ##
 ### Tail: Main
