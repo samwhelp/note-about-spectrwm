@@ -18,15 +18,18 @@ util_debug_echo () {
 ################################################################################
 ### Head: Base
 ##
+
+## THE_BASE_DIR_PATH="$(cd -- "$(dirname -- "$0")" ; pwd)"
+
 find_dir_path () {
-	if [ ! -d $(dirname -- "$1") ]; then
+	if ! [ -d "$(dirname -- "$1")" ]; then
 		dirname -- "$1"
 		return 1
 	fi
-	echo $(cd -P -- "$(dirname -- "$1")" && pwd -P)
+	echo "$(cd -- "$(dirname -- "$1")" ; pwd)"
 }
 
-##THIS_BASE_DIR_PATH=$(find_dir_path $0)
+## THIS_BASE_DIR_PATH="$(find_dir_path "$0")"
 
 ## $ export DEBUG_SPECTRWMRC_GET=true
 is_debug () {
@@ -43,8 +46,8 @@ is_not_debug () {
 
 base_var_init () {
 
-	#THE_PLAN_DIR_PATH=$(find_dir_path "$THE_BASE_DIR_PATH/../.")
-	THE_PLAN_DIR_PATH=$(find_dir_path "$THE_BASE_DIR_PATH/.")
+	#THE_PLAN_DIR_PATH="$(find_dir_path "$THE_BASE_DIR_PATH/../.")"
+	THE_PLAN_DIR_PATH="$(find_dir_path "$THE_BASE_DIR_PATH/.")"
 
 	THE_CMD_VERSION='0.1'
 
