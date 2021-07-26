@@ -15,6 +15,7 @@
 * [設定](#設定)
 * [使用情境](#使用情境)
 * [專案](#專案)
+* [輔助工具](#輔助工具)
 
 
 ### 入門
@@ -38,6 +39,14 @@
 | --- | --- |
 | [spectrwmrc-get](https://samwhelp.github.io/note-about-spectrwm/read/project/spectrwmrc-profile/spectrwmrc-get.html) | 用來輔助「安裝」spectrwm config |
 | [spectrwmrc-ctrl](https://samwhelp.github.io/note-about-spectrwm/read/project/spectrwmrc-profile/spectrwmrc-ctrl.html) | 用來輔助「切換」spectrwm config |
+
+### 輔助工具
+
+| 工具 | 指令 | 功能 |
+| --- | --- | --- |
+| [wallpaper-select-feh](https://samwhelp.github.io/note-about-fzf/read/project/wallpaper-select/wallpaper-select-feh) | `wallpaper-select-feh fzf` | 設定桌面圖片 |
+| [xfteditor](https://samwhelp.github.io/tool-xfteditor/read/project/xfteditor/) | `xfted file_path` | 輔助「檔案管理器」，右鍵開啟檔案到「xfce-terminal」的「新頁籤(Tab)」 |
+
 
 ### 使用情境
 
