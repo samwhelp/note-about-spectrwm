@@ -81,7 +81,7 @@ base_var_init () {
 	THE_CMD_DIR_PATH="${THE_BASE_DIR_PATH}"
 
 	if [ "none${THE_CMD_FILE_NAME}" = 'none' ]; then
-		THE_CMD_FILE_NAME="spectrwmrc-ctrl"
+		THE_CMD_FILE_NAME='spectrwmrc-ctrl'
 	fi
 
 	THE_CMD_FILE_PATH="${THE_CMD_DIR_PATH}/$THE_CMD_FILE_NAME"
@@ -116,9 +116,12 @@ base_var_init () {
 	THE_SPECTRWMRC_DIR_NAME="spectrwm"
 	THE_SPECTRWMRC_DIR_PATH="$HOME/.config/$THE_SPECTRWMRC_DIR_NAME"
 
+	THE_SPECTRWMRC_FILE_NAME="spectrwm.conf"
+	THE_SPECTRWMRC_FILE_PATH="$THE_SPECTRWMRC_DIR_PATH/$THE_SPECTRWMRC_FILE_NAME"
+
 	## spectrwmrc-profile
 	THE_SPECTRWMRC_PROFILE_DIR_NAME="spectrwmrc-profile"
-	THE_SPECTRWMRC_PROFILE_DIR_PATH="$HOME/.config/$THE_SPECTRWMRC_PROFILE_DIR_NAME"
+	THE_SPECTRWMRC_PROFILE_DIR_PATH="$HOME/.local/share/$THE_SPECTRWMRC_PROFILE_DIR_NAME"
 
 }
 
@@ -172,6 +175,8 @@ base_var_dump () {
 	util_debug_echo "THE_SPECTRWMRC_DIR_NAME=$THE_SPECTRWMRC_DIR_NAME"
 	util_debug_echo "THE_SPECTRWMRC_DIR_PATH=$THE_SPECTRWMRC_DIR_PATH"
 
+	util_debug_echo "THE_SPECTRWMRC_FILE_NAME=$THE_SPECTRWMRC_FILE_NAME"
+	util_debug_echo "THE_SPECTRWMRC_FILE_PATH=$THE_SPECTRWMRC_FILE_PATH"
 
 	util_debug_echo "THE_SPECTRWMRC_PROFILE_DIR_NAME=$THE_SPECTRWMRC_PROFILE_DIR_NAME"
 	util_debug_echo "THE_SPECTRWMRC_PROFILE_DIR_PATH=$THE_SPECTRWMRC_PROFILE_DIR_PATH"
@@ -385,8 +390,9 @@ util_self_actions () {
 ##
 
 is_spectrwmrc_dir () {
+
 	local dir_path="$1"
-	local spectrwmrc_file_path="$dir_path/spectrwm.conf" ## ~/.config/spectrwmrc-profile/demo/spectrwm.conf
+	local spectrwmrc_file_path="$dir_path/$THE_SPECTRWMRC_FILE_NAME" ## ~/.config/spectrwmrc-profile/demo/spectrwm.conf
 
 	if [ ! -f "$spectrwmrc_file_path" ]; then ## check ~/.config/spectrwmrc-profile/demo/spectrwm.conf
 		return 1
@@ -396,14 +402,16 @@ is_spectrwmrc_dir () {
 }
 
 is_not_spectrwmrc_dir () {
+
 	local dir_path="$1"
-	local spectrwmrc_file_path="$dir_path/spectrwm.conf" ## ~/.config/spectrwmrc-profile/demo/spectrwm.conf
+	local spectrwmrc_file_path="$dir_path/$THE_SPECTRWMRC_FILE_NAME" ## ~/.config/spectrwmrc-profile/demo/spectrwm.conf
 
 	if [ -f "$spectrwmrc_file_path" ]; then ## check ~/.config/spectrwmrc-profile/demo/spectrwm.conf
 		return 1
 	fi
 
 	return 0
+
 }
 
 spectrwmrc_find_dir_path_by_name () {
@@ -414,8 +422,8 @@ spectrwmrc_find_dir_path_by_name () {
 
 spectrwmrc_check_spectrwmrc_dir_exists () {
 
-	local spectrwmrc_dir_name="spectrwm"
-	local spectrwmrc_dir_path="$HOME/.config/$spectrwmrc_dir_name"
+	local spectrwmrc_dir_name="$THE_SPECTRWMRC_DIR_NAME"
+	local spectrwmrc_dir_path="$THE_SPECTRWMRC_DIR_PATH"
 
 	if ! [ -a "$spectrwmrc_dir_path" ]; then ## file not exists
 		return 0
@@ -428,36 +436,31 @@ spectrwmrc_check_spectrwmrc_dir_exists () {
 
 
 
-	echo "Dir is exists:" "$spectrwmrc_dir_path"
-	echo
+	util_error_echo "## Dir is exists:" "$spectrwmrc_dir_path"
+	util_error_echo
 
-	echo "Try to backup:"
-	echo
+	util_error_echo "## Try to backup:"
+	util_error_echo
 
-	local now=$(date +%Y%m%d_%s)
-	local bak_dir_path="${HOME}/.backup/spectrwmrc.bak"
+	local now="$(date +%Y%m%d_%s)"
+	local bak_dir_path="${HOME}/.backup/${spectrwmrc_dir_name}.bak"
 	local bak_target_path="${bak_dir_path}/${spectrwmrc_dir_name}.bak.${now}"
 
-	echo "mkdir -p ${bak_dir_path}"
+	util_error_echo "mkdir -p ${bak_dir_path}"
 	mkdir -p "${bak_dir_path}"
 
 
-	echo "cp -a ${spectrwmrc_dir_path} ${bak_target_path}"
+	util_error_echo "cp -a ${spectrwmrc_dir_path} ${bak_target_path}"
 	cp -a "${spectrwmrc_dir_path}" "${bak_target_path}"
 
 	if [ "$?" != "0" ]; then
-		echo
-		echo 'Backup Failure!'
+		util_error_echo
+		util_error_echo '## Backup Failure!'
 		#exit 1
 		return 1
 	fi
 
-	echo
-
-
-
-
-
+	util_error_echo
 
 
 	return 0
@@ -473,8 +476,6 @@ spectrwmrc_profile_init_dir () {
 
 	return 0
 }
-
-
 
 ##
 ### Tail: Sys
@@ -495,21 +496,23 @@ mod_xephyr () {
 	#echo "mod_xephyr"
 	#echo "$@"
 
-if ! is_command_exist 'Xephyr'; then
+	if ! is_command_exist 'Xephyr'; then
 
-cat << EOF
+		util_error_echo
+		util_error_echo '## Need: Xephyr'
+		util_error_echo '# * https://archlinux.org/packages/extra/x86_64/xorg-server-xephyr/'
+		util_error_echo
+		util_error_echo '## Manjaro Install:'
+		util_error_echo '# $ pamac install xorg-server-xephyr'
+		util_error_echo
+		util_error_echo '## Ubuntu Install:'
+		util_error_echo '# $ sudo apt-get install xserver-xephyr'
+		util_error_echo
 
-## Need: Xephyr
+		return 1
+	fi
 
-	* https://archlinux.org/packages/extra/x86_64/xorg-server-xephyr/
-
-	$ pamac install xorg-server-xephyr
-
-EOF
-	return 1
-fi
-
-mod_xephyr_run_spectrwm "$1" "$2"
+	mod_xephyr_run_spectrwm "$1" "$2"
 
 }
 
@@ -536,17 +539,17 @@ mod_xephyr_run_spectrwm () {
 	## run Xephyr
 	#Xephyr :100 -ac -screen 1280x720 &
 	Xephyr :100 -ac -screen "$screen_size" &
-	XEPHYR_PID=$!
+	XEPHYR_PID="$!"
 	sleep 0.5
 
 	## run spectrwm
 	##DISPLAY=:100 spectrwm
 
 	if [ "none$config_file_path" = "none" ]; then
-		echo "DISPLAY=:100 spectrwm"
+		util_error_echo "DISPLAY=:100 spectrwm"
 		DISPLAY=:100 spectrwm
 	else
-		echo "DISPLAY=:100 spectrwm -c $config_file_path"
+		util_error_echo "DISPLAY=:100 spectrwm -c $config_file_path"
 		DISPLAY=:100 spectrwm -c $config_file_path
 	fi
 
@@ -572,31 +575,32 @@ mod_fzf () {
 
 	if ! is_command_exist 'fzf'; then
 
-cat << EOF
+		util_error_echo '## Need: fzf'
+		util_error_echo '# * https://github.com/junegunn/fzf'
+		util_error_echo
+		util_error_echo '## Manjaro Install:'
+		util_error_echo '# $ pamac install fzf'
+		util_error_echo
+		util_error_echo '## Ubuntu Install:'
+		util_error_echo '# $ sudo apt-get install fzf'
+		util_error_echo
 
-## Need: fzf
-
-	* https://github.com/junegunn/fzf
-
-	$ pamac install fzf
-
-EOF
 		return 1
 	fi
-
-
 
 
 	local selected=$(mod_spectrwmrc_profile_list | fzf)
 
-	echo
-	echo "## Selected: $selected"
-	echo
+	util_error_echo
+	util_error_echo "## Selected:"
+	#util_error_echo
 
 	if [ "none$selected" = "none" ]; then
+		util_error_echo "# ! None Selected !"
 		return 1
 	fi
 
+	util_error_echo "# [ $selected ]"
 	mod_spectrwmrc_profile_set "$selected"
 
 }
@@ -640,8 +644,8 @@ mod_spectrwmrc_profile_list () {
 
 	## for name in $(ls ./ -1); do
 	for name in *; do
-		dir_path="$THE_SPECTRWMRC_PROFILE_DIR_PATH/$name" ## ~/.config/spectrwmrc-profile/demo
-		if is_not_spectrwmrc_dir "$dir_path"; then ## check ~/.config/spectrwmrc-profile/demo/spectrwm.conf
+		dir_path="$THE_SPECTRWMRC_PROFILE_DIR_PATH/$name" ## ~/.local/share/spectrwmrc-profile/demo
+		if is_not_spectrwmrc_dir "$dir_path"; then ## check ~/.local/share/spectrwmrc-profile/demo/spectrwm.conf
 			continue
 		fi
 
@@ -662,13 +666,15 @@ mod_spectrwmrc_profile_list () {
 ##
 
 mod_spectrwmrc_profile_get () {
+
 	#echo "mod_spectrwmrc_profile_get"
 	#echo "$@"
 
 	# spectrwmrc-ctrl get
 
-	local dir_path=$(LANG=C file ~/.config/spectrwm | awk -F ' symbolic link to ' '{print $2}')
-	local name=$(basename "$dir_path")
+	local target_path="$THE_SPECTRWMRC_DIR_PATH" ## ~/.config/spectrwm
+	local dir_path="$(LANG=C file "$target_path" | awk -F ' symbolic link to ' '{print $2}')"
+	local name="$(basename "$dir_path")"
 
 	echo $name
 
@@ -698,11 +704,17 @@ mod_spectrwmrc_profile_set () {
 	#echo "source_dir_path=$source_dir_path"
 
 	if is_not_spectrwmrc_dir "$source_dir_path"; then ## check ~/.config/spectrwmrc-profile/demo/spectrwm.conf
-		echo "Not valid spectrwmrc dir: $source_dir_path"
-		echo
-		echo 'Please run:'
-		echo '	$ spectrwmrc-ctrl list'
-		echo 'to find valid spectrwmrc dir.'
+		util_error_echo
+		util_error_echo "## Not Valid Spectrwmrc Dir: "
+		util_error_echo
+		util_error_echo "$source_dir_path"
+		util_error_echo
+		util_error_echo '## Please Run:'
+		util_error_echo
+		util_error_echo '$ spectrwmrc-ctrl list'
+		util_error_echo
+		util_error_echo '# to find valid spectrwmrc dir.'
+		util_error_echo
 		return 1
 	fi
 
@@ -710,24 +722,23 @@ mod_spectrwmrc_profile_set () {
 
 
 	if [ -h "$target_dir_path" ]; then ## ~/.config/spectrwm is symbolic link
-		echo
-		echo rm -f "$target_dir_path"
+		util_error_echo
+		util_error_echo "rm -f $target_dir_path"
 		rm -f "$target_dir_path"
 	else
-		echo
-		echo rm -rf "$target_dir_path"
+		util_error_echo
+		util_error_echo "rm -rf $target_dir_path"
 		rm -rf "$target_dir_path"
 	fi
 
 
-
-
-	echo
-	echo ln -sf "$source_dir_path" "$target_dir_path"
+	util_error_echo
+	util_error_echo "ln -sf $source_dir_path $target_dir_path"
 	ln -sf "$source_dir_path" "$target_dir_path"
 
 
-	echo
+	util_error_echo
+	util_error_echo "file $target_dir_path"
 	file "$target_dir_path"
 
 }
@@ -749,14 +760,14 @@ spectrwmrc_profile_install () {
 	local name="$1"
 	local repo_url="$2"
 
-	echo "mkdir -p $THE_SPECTRWMRC_PROFILE_DIR_PATH"
+	util_error_echo "mkdir -p $THE_SPECTRWMRC_PROFILE_DIR_PATH"
 	mkdir -p "$THE_SPECTRWMRC_PROFILE_DIR_PATH"
 
-	echo "cd $THE_SPECTRWMRC_PROFILE_DIR_PATH"
-	cd "$THE_SPECTRWMRC_PROFILE_DIR_PATH" ## cd ~/.config/spectrwmrc-profile
+	util_error_echo "cd $THE_SPECTRWMRC_PROFILE_DIR_PATH"
+	cd "$THE_SPECTRWMRC_PROFILE_DIR_PATH" ## cd ~/.local/share/spectrwmrc-profile
 
 
-	echo "git clone --recursive $repo_url $name"
+	util_error_echo "git clone --recursive $repo_url $name"
 	git clone --recursive "$repo_url" "$name" ## git clone https://github.com/conformal/spectrwm.git demo
 
 	cd "$OLDPWD"
@@ -781,21 +792,26 @@ mod_spectrwmrc_profile_remove () {
 
 	spectrwmrc_profile_init_dir
 
-	echo "cd $THE_SPECTRWMRC_PROFILE_DIR_PATH"
-	cd "$THE_SPECTRWMRC_PROFILE_DIR_PATH" ## cd ~/.spectrwmrc-profile
+	util_error_echo "cd $THE_SPECTRWMRC_PROFILE_DIR_PATH"
+	cd "$THE_SPECTRWMRC_PROFILE_DIR_PATH" ## cd ~/.local/share/spectrwmrc-profile
 
 	local dir_path="./$name"
 
-	if [ ! -d "$dir_path" ]; then ## check ~/.spectrwmrc-profile/demo
-		echo "Dir not exists: $name"
+	if [ ! -d "$dir_path" ]; then ## check ~/.local/share/.spectrwmrc-profile/demo
+		util_error_echo
+		util_error_echo "## Dir not exists: "
+		util_error_echo
+		util_error_echo "$name"
+		util_error_echo
 		return 1
 	fi
 
 	##mod_spectrwmrc_profile_default
 
-	echo "rm -rf $dir_path"
+	util_error_echo "rm -rf $dir_path"
 	rm -rf "$dir_path"
 
+	util_error_echo "cd $OLDPWD"
 	cd "$OLDPWD"
 
 }

@@ -11,14 +11,14 @@ spectrwmrc_profile_install () {
 	local name="$1"
 	local repo_url="$2"
 
-	echo "mkdir -p $THE_SPECTRWMRC_PROFILE_DIR_PATH"
+	util_error_echo "mkdir -p $THE_SPECTRWMRC_PROFILE_DIR_PATH"
 	mkdir -p "$THE_SPECTRWMRC_PROFILE_DIR_PATH"
 
-	echo "cd $THE_SPECTRWMRC_PROFILE_DIR_PATH"
-	cd "$THE_SPECTRWMRC_PROFILE_DIR_PATH" ## cd ~/.config/spectrwmrc-profile
+	util_error_echo "cd $THE_SPECTRWMRC_PROFILE_DIR_PATH"
+	cd "$THE_SPECTRWMRC_PROFILE_DIR_PATH" ## cd ~/.local/share/spectrwmrc-profile
 
 
-	echo "git clone --recursive $repo_url $name"
+	util_error_echo "git clone --recursive $repo_url $name"
 	git clone --recursive "$repo_url" "$name" ## git clone https://github.com/conformal/spectrwm.git demo
 
 	cd "$OLDPWD"

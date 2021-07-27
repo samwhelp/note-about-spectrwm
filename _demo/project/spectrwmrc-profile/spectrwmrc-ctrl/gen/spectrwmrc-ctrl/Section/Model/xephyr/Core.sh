@@ -14,21 +14,23 @@ mod_xephyr () {
 	#echo "mod_xephyr"
 	#echo "$@"
 
-if ! is_command_exist 'Xephyr'; then
+	if ! is_command_exist 'Xephyr'; then
 
-cat << EOF
+		util_error_echo
+		util_error_echo '## Need: Xephyr'
+		util_error_echo '# * https://archlinux.org/packages/extra/x86_64/xorg-server-xephyr/'
+		util_error_echo
+		util_error_echo '## Manjaro Install:'
+		util_error_echo '# $ pamac install xorg-server-xephyr'
+		util_error_echo
+		util_error_echo '## Ubuntu Install:'
+		util_error_echo '# $ sudo apt-get install xserver-xephyr'
+		util_error_echo
 
-## Need: Xephyr
+		return 1
+	fi
 
-	* https://archlinux.org/packages/extra/x86_64/xorg-server-xephyr/
-
-	$ pamac install xorg-server-xephyr
-
-EOF
-	return 1
-fi
-
-mod_xephyr_run_spectrwm "$1" "$2"
+	mod_xephyr_run_spectrwm "$1" "$2"
 
 }
 
@@ -55,17 +57,17 @@ mod_xephyr_run_spectrwm () {
 	## run Xephyr
 	#Xephyr :100 -ac -screen 1280x720 &
 	Xephyr :100 -ac -screen "$screen_size" &
-	XEPHYR_PID=$!
+	XEPHYR_PID="$!"
 	sleep 0.5
 
 	## run spectrwm
 	##DISPLAY=:100 spectrwm
 
 	if [ "none$config_file_path" = "none" ]; then
-		echo "DISPLAY=:100 spectrwm"
+		util_error_echo "DISPLAY=:100 spectrwm"
 		DISPLAY=:100 spectrwm
 	else
-		echo "DISPLAY=:100 spectrwm -c $config_file_path"
+		util_error_echo "DISPLAY=:100 spectrwm -c $config_file_path"
 		DISPLAY=:100 spectrwm -c $config_file_path
 	fi
 

@@ -58,7 +58,7 @@ base_var_init () {
 	THE_CMD_DIR_PATH="${THE_BASE_DIR_PATH}"
 
 	if [ "none${THE_CMD_FILE_NAME}" = 'none' ]; then
-		THE_CMD_FILE_NAME="spectrwmrc-get"
+		THE_CMD_FILE_NAME='spectrwmrc-get'
 	fi
 
 	THE_CMD_FILE_PATH="${THE_CMD_DIR_PATH}/$THE_CMD_FILE_NAME"

@@ -5,8 +5,9 @@
 ##
 
 is_spectrwmrc_dir () {
+
 	local dir_path="$1"
-	local spectrwmrc_file_path="$dir_path/spectrwm.conf" ## ~/.config/spectrwmrc-profile/demo/spectrwm.conf
+	local spectrwmrc_file_path="$dir_path/$THE_SPECTRWMRC_FILE_NAME" ## ~/.config/spectrwmrc-profile/demo/spectrwm.conf
 
 	if [ ! -f "$spectrwmrc_file_path" ]; then ## check ~/.config/spectrwmrc-profile/demo/spectrwm.conf
 		return 1
@@ -16,14 +17,16 @@ is_spectrwmrc_dir () {
 }
 
 is_not_spectrwmrc_dir () {
+
 	local dir_path="$1"
-	local spectrwmrc_file_path="$dir_path/spectrwm.conf" ## ~/.config/spectrwmrc-profile/demo/spectrwm.conf
+	local spectrwmrc_file_path="$dir_path/$THE_SPECTRWMRC_FILE_NAME" ## ~/.config/spectrwmrc-profile/demo/spectrwm.conf
 
 	if [ -f "$spectrwmrc_file_path" ]; then ## check ~/.config/spectrwmrc-profile/demo/spectrwm.conf
 		return 1
 	fi
 
 	return 0
+
 }
 
 spectrwmrc_find_dir_path_by_name () {
@@ -34,8 +37,8 @@ spectrwmrc_find_dir_path_by_name () {
 
 spectrwmrc_check_spectrwmrc_dir_exists () {
 
-	local spectrwmrc_dir_name="spectrwm"
-	local spectrwmrc_dir_path="$HOME/.config/$spectrwmrc_dir_name"
+	local spectrwmrc_dir_name="$THE_SPECTRWMRC_DIR_NAME"
+	local spectrwmrc_dir_path="$THE_SPECTRWMRC_DIR_PATH"
 
 	if ! [ -a "$spectrwmrc_dir_path" ]; then ## file not exists
 		return 0
@@ -48,36 +51,31 @@ spectrwmrc_check_spectrwmrc_dir_exists () {
 
 
 
-	echo "Dir is exists:" "$spectrwmrc_dir_path"
-	echo
+	util_error_echo "## Dir is exists:" "$spectrwmrc_dir_path"
+	util_error_echo
 
-	echo "Try to backup:"
-	echo
+	util_error_echo "## Try to backup:"
+	util_error_echo
 
-	local now=$(date +%Y%m%d_%s)
-	local bak_dir_path="${HOME}/.backup/spectrwmrc.bak"
+	local now="$(date +%Y%m%d_%s)"
+	local bak_dir_path="${HOME}/.backup/${spectrwmrc_dir_name}.bak"
 	local bak_target_path="${bak_dir_path}/${spectrwmrc_dir_name}.bak.${now}"
 
-	echo "mkdir -p ${bak_dir_path}"
+	util_error_echo "mkdir -p ${bak_dir_path}"
 	mkdir -p "${bak_dir_path}"
 
 
-	echo "cp -a ${spectrwmrc_dir_path} ${bak_target_path}"
+	util_error_echo "cp -a ${spectrwmrc_dir_path} ${bak_target_path}"
 	cp -a "${spectrwmrc_dir_path}" "${bak_target_path}"
 
 	if [ "$?" != "0" ]; then
-		echo
-		echo 'Backup Failure!'
+		util_error_echo
+		util_error_echo '## Backup Failure!'
 		#exit 1
 		return 1
 	fi
 
-	echo
-
-
-
-
-
+	util_error_echo
 
 
 	return 0
@@ -93,8 +91,6 @@ spectrwmrc_profile_init_dir () {
 
 	return 0
 }
-
-
 
 ##
 ### Tail: Sys

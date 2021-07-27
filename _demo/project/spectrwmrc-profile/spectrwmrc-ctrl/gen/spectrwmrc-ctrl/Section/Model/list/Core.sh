@@ -21,8 +21,8 @@ mod_spectrwmrc_profile_list () {
 
 	## for name in $(ls ./ -1); do
 	for name in *; do
-		dir_path="$THE_SPECTRWMRC_PROFILE_DIR_PATH/$name" ## ~/.config/spectrwmrc-profile/demo
-		if is_not_spectrwmrc_dir "$dir_path"; then ## check ~/.config/spectrwmrc-profile/demo/spectrwm.conf
+		dir_path="$THE_SPECTRWMRC_PROFILE_DIR_PATH/$name" ## ~/.local/share/spectrwmrc-profile/demo
+		if is_not_spectrwmrc_dir "$dir_path"; then ## check ~/.local/share/spectrwmrc-profile/demo/spectrwm.conf
 			continue
 		fi
 
