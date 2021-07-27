@@ -748,9 +748,11 @@ mod_spectrwmrc_profile_set () {
 		util_error_echo
 		util_error_echo '## Please Run:'
 		util_error_echo
+		util_error_echo '# to find valid herbstluftwmrc dir.'
 		util_error_echo '$ spectrwmrc-ctrl list'
 		util_error_echo
-		util_error_echo '# to find valid spectrwmrc dir.'
+		util_error_echo '# to select valid herbstluftwmrc dir.'
+		util_error_echo '$ spectrwmrc-ctrl fzf'
 		util_error_echo
 		return 1
 	fi
