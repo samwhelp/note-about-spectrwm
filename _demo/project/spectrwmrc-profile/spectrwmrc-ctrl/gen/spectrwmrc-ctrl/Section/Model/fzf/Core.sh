@@ -24,7 +24,7 @@ mod_fzf () {
 	fi
 
 
-	local selected=$(mod_spectrwmrc_profile_list | fzf)
+	local selected="$(mod_spectrwmrc_profile_list | fzf)"
 
 	util_error_echo
 	util_error_echo "## Selected:"

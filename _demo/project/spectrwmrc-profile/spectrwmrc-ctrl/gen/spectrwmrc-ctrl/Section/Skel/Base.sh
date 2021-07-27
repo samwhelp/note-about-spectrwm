@@ -89,6 +89,8 @@ base_var_init () {
 	THE_CACHE_DIR_PATH="$HOME/.cache/$THE_CACHE_DIR_NAME"
 
 
+
+
 	## spectrwm
 	THE_SPECTRWMRC_DIR_NAME="spectrwm"
 	THE_SPECTRWMRC_DIR_PATH="$HOME/.config/$THE_SPECTRWMRC_DIR_NAME"
@@ -157,6 +159,7 @@ base_var_dump () {
 
 	util_debug_echo "THE_SPECTRWMRC_PROFILE_DIR_NAME=$THE_SPECTRWMRC_PROFILE_DIR_NAME"
 	util_debug_echo "THE_SPECTRWMRC_PROFILE_DIR_PATH=$THE_SPECTRWMRC_PROFILE_DIR_PATH"
+
 
 	util_debug_echo "#"
 	util_debug_echo "##"

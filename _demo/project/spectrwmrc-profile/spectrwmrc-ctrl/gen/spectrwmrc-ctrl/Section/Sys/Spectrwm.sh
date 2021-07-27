@@ -92,6 +92,40 @@ spectrwmrc_profile_init_dir () {
 	return 0
 }
 
+
+spectrwmrc_repo_clone () {
+
+	## $ spectrwmrc-get demo
+
+	local name="$1"
+	local repo_url="$2"
+
+	if [ "none$name" == 'none' ]; then
+		name='default'
+	fi
+
+	util_error_echo "mkdir -p $THE_SPECTRWMRC_PROFILE_DIR_PATH"
+	mkdir -p "$THE_SPECTRWMRC_PROFILE_DIR_PATH"
+
+	util_error_echo "cd $THE_SPECTRWMRC_PROFILE_DIR_PATH"
+	cd "$THE_SPECTRWMRC_PROFILE_DIR_PATH" ## cd ~/.local/share/spectrwmrc-profile
+
+
+	if [ -d "$name" ]; then
+		util_error_echo
+		util_error_echo "## Is Exists:" "$THE_SPECTRWMRC_PROFILE_DIR_PATH/$name"
+		return 0;
+	fi
+
+	util_error_echo "git clone --recursive $repo_url $name "
+	git clone --recursive "$repo_url" "$name"  ## git clone --recursive https://github.com/conformal/spectrwm.git demo
+
+	## $ man cd
+	util_error_echo "cd $OLDPWD"
+	cd "$OLDPWD"
+
+}
+
 ##
 ### Tail: Sys
 ################################################################################
