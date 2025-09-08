@@ -7,9 +7,13 @@ has_children: true
 # 連結
 
 
+
+
 ## spectrwm
 
 * spectrwm ([GitHub](https://github.com/conformal/spectrwm)) ([Wiki](https://github.com/conformal/spectrwm/wiki))
+
+
 
 
 ## Arch Wiki
@@ -17,10 +21,15 @@ has_children: true
 * [spectrwm](https://wiki.archlinux.org/title/spectrwm)
 
 
+
+
 ## Manjaro
 
 * manjaro 探索筆記 / [spectrwm](https://samwhelp.github.io/note-about-manjaro/read/adjustment/wm/spectrwm.html)
 * manjaro 探索筆記 / [picom](https://samwhelp.github.io/note-about-manjaro/read/adjustment/tool/picom.html)
+
+
+
 
 ## Just the Docs
 
