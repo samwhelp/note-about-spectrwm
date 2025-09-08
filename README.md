@@ -1,21 +1,36 @@
 
+
 # 首頁
 
-* [note-about-spectrwm](https://samwhelp.github.io/note-about-spectrwm/) ([GitHub](https://github.com/samwhelp/note-about-spectrwm))
+| Link | GitHub |
+| ---- | ------ |
+| [Spectrwm Adjustment](https://samwhelp.github.io/spectrwm-adjustment/) | [GitHub](https://github.com/samwhelp/spectrwm-adjustment) |
+| [Spectrwm 探索筆記](https://samwhelp.github.io/note-about-spectrwm/) | [GitHub](https://github.com/samwhelp/note-about-spectrwm) |
 
 
-## samwhelp
-
-* [個人筆記](https://samwhelp.github.io/book/)
 
 
 ## 主題
 
+* [微調腳本](#微調腳本)
 * [入門](#入門)
 * [設定](#設定)
 * [使用情境](#使用情境)
 * [專案](#專案)
 * [輔助工具](#輔助工具)
+* [相關筆記](#相關筆記)
+
+
+
+
+## 微調腳本
+
+| 微調腳本 |
+| ------- |
+| [Spectrwm Config](https://github.com/samwhelp/spectrwm-adjustment/tree/main/prototype/main/spectrwm-config) |
+| [Tool Config](https://github.com/samwhelp/debian-adjustment/tree/main/prototype/main/tool-config/part) |
+
+
 
 
 ### 入門
@@ -23,6 +38,8 @@
 | 議題 |
 | --- |
 | [入門](https://samwhelp.github.io/note-about-spectrwm/read/start.html) |
+
+
 
 
 ### 設定
@@ -33,6 +50,8 @@
 | [我的鍵盤按鍵綁定](https://samwhelp.github.io/note-about-spectrwm/read/config/keybind.html) |
 
 
+
+
 ### 專案
 
 | 工具 | 簡介 |
@@ -40,12 +59,17 @@
 | [spectrwmrc-get](https://samwhelp.github.io/note-about-spectrwm/read/project/spectrwmrc-profile/spectrwmrc-get.html) | 用來輔助「安裝」spectrwm config |
 | [spectrwmrc-ctrl](https://samwhelp.github.io/note-about-spectrwm/read/project/spectrwmrc-profile/spectrwmrc-ctrl.html) | 用來輔助「切換」spectrwm config |
 
+
+
+
 ### 輔助工具
 
 | 工具 | 指令 | 功能 |
 | --- | --- | --- |
 | [wallpaper-select-feh](https://samwhelp.github.io/note-about-fzf/read/project/wallpaper-select/wallpaper-select-feh) | `wallpaper-select-feh fzf` | 設定桌面圖片 |
 | [xfteditor](https://samwhelp.github.io/tool-xfteditor/read/project/xfteditor/) | `xfted file_path` | 輔助「檔案管理器」，右鍵開啟檔案到「xfce-terminal」的「新頁籤(Tab)」 |
+
+
 
 
 ### 使用情境
@@ -77,3 +101,21 @@
 | 音量控制 |
 | --- |
 | [音量控制](https://samwhelp.github.io/note-about-spectrwm/read/scenario/volume-control) |
+
+
+
+
+## 相關筆記
+
+| Link | GitHub |
+| ---- | ------ |
+| [Debian 探索筆記](https://samwhelp.github.io/note-about-debian/) | [GitHub](https://github.com/samwhelp/note-about-debian) |
+| [Ubuntu 探索筆記](https://samwhelp.github.io/note-about-ubuntu/) | [GitHub](https://github.com/samwhelp/note-about-ubuntu) |
+| [Linux Mint 探索筆記](https://samwhelp.github.io/note-about-linuxmint/) | [GitHub](https://github.com/samwhelp/note-about-linuxmint) |
+
+
+
+
+## Samwhelp
+
+* [個人筆記](https://samwhelp.github.io/book/)
